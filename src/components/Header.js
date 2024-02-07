@@ -11,26 +11,12 @@ import {
 import { Box, HStack } from '@chakra-ui/react';
 
 const socials = [
-  {
-    icon: faEnvelope,
-    url: 'mailto: hello@example.com',
-  },
-  {
-    icon: faGithub,
-    url: 'https://github.com',
-  },
-  {
-    icon: faLinkedinIn,
-    url: 'https://www.linkedin.com',
-  },
-  {
-    icon: faMedium,
-    url: 'https://medium.com',
-  },
-  {
-    icon: faStackOverflow,
-    url: 'https://stackoverflow.com',
-  },
+  { name: faEnvelope, url: "mailto: user@user.com" },
+  { name: faGithub, url: "https://github.com/yourusername", color: "#B197FC" },
+  { name: faLinkedinIn, url: "https://linkedin.com/in/yourusername" },
+  { name: faFacebook, url: "https://facebook.com/yourusername", color: "#74C0FC" },
+  { name: faMedium, url: "https://medium.com/@yourusername", color: "#fff" },
+  { name: faStackOverflow, url: "https://stackoverflow.com/users/youruserid/yourusername", color: "#FCA311" },
 ];
 
 const Header = () => {
@@ -89,7 +75,7 @@ const Header = () => {
             {socials.map((social, index) => (
               <a key={index} href={social.url} target="_blank" rel="noopener noreferrer">
                 <FontAwesomeIcon
-                  icon={socials.icon}
+                  icon={social.name}
                   size='2xl'
                   style={{ color: social.color }}
                 />
